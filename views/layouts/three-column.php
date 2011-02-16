@@ -4,7 +4,7 @@
 
 <div id="content" class="body">
 	<div class="column left">
-		<?php echo empty($right_column) ? '' : $right_column; ?>
+		<?php echo empty($left_column) ? '' : $left_column; ?>
 	</div>
 	
 	<div class="column center">
@@ -12,7 +12,7 @@
 	</div>
 	
 	<div class="column right">
-		<?php echo empty($left_column) ? '' : $left_column; ?>
+		<?php echo empty($right_column) ? '' : $right_column; ?>
 	</div>
 </div>
 
