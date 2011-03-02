@@ -5,8 +5,8 @@
 <title><?php echo empty($title) ? 'Untitled' : $title; ?></title>
 
 <?php foreach ($metas as $attributes) echo '<meta'.HTML::attributes($attributes).' />', "\n"; ?>
-<?php foreach ($styles as $style => $media) echo HTML::style($style, array('media' => $media)), "\n"; ?>
-<?php foreach ($scripts as $script) echo HTML::script($script), "\n"; ?>
+<?php foreach ($styles as $file => $attributes) echo HTML::style($file, $attributes), "\n"; ?>
+<?php foreach ($scripts as $file => $attributes) echo HTML::script($file, $attributes), "\n"; ?>
 
 </head>
 
