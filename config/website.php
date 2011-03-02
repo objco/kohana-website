@@ -8,10 +8,6 @@ return array
 	
 	'title' => array(
 		'default' => 'Untitled',
-		'prefix' => '',
-		'prefix_separator' => '',
-		'postfix' => '',
-		'postfix_separator' => '',
 	),
 	
 	'keywords' => array(),

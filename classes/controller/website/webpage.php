@@ -14,11 +14,11 @@ abstract class Controller_Website_Webpage extends Controller_Template {
 	
 	public $title = '';
 	public $description = '';
-	private $keywords = array();
+	protected $keywords = array();
 	
-	private $metas = array();
-	private $styles = array();
-	private $scripts = array();
+	protected $metas = array();
+	protected $styles = array();
+	protected $scripts = array();
 	
 	private $content = array();
 	protected $pre_scripts;
@@ -31,6 +31,7 @@ abstract class Controller_Website_Webpage extends Controller_Template {
 		if ($this->auto_render === TRUE)
 		{	
 			$this->template->bind('title', $this->title);
+			$this->title = empty($this->title) ? Kohana::config('website.title.default') : $this->title;
 			
 			$this->template->bind('metas', $this->metas);
 			$this->template->bind('styles', $this->styles);
@@ -53,11 +54,7 @@ abstract class Controller_Website_Webpage extends Controller_Template {
 			$this->template->layout_class = 'layout-'.$this->layout;
 			$this->template->layout = View::factory('layouts/'.$this->layout);
 			
-			$this->title = __(Kohana::config('website.title.prefix'));
-			$this->title .= Kohana::config('website.title.prefix_separator');
-			$this->title .= empty($this->title) ? Kohana::config('website.title.default') : __($this->title);
-			$this->title .= Kohana::config('website.title.postfix_separator');
-			$this->title .= __(Kohana::config('website.title.postfix'));
+			$this->title = __($this->title);
 			
 			if ( ! empty($this->keywords))
 			{
