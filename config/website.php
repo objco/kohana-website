@@ -16,15 +16,9 @@ return array
 	
 	'keywords' => array(),
 	
-	'metas' => array(
-		array('charset' => 'UTF-8'),
-	),
+	'metas' => array(),
 	
-	'styles' => array(
-		'http://meyerweb.com/eric/tools/css/reset/reset.css',
-	),
+	'styles' => array(),
 	
-	'scripts' => array(
-		'https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js',
-	),
+	'scripts' => array(),
 );
