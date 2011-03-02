@@ -116,35 +116,28 @@ abstract class Controller_Website_Webpage extends Controller_Template {
 	
 	protected function styles($styles)
 	{
-		foreach ($styles as $style)
+		foreach ($styles as $file => $attributes)
 		{
-			if (is_array($style))
-			{
-				$this->add_style($style[0], $style[1]);
-			}
-			else
-			{
-				$this->add_style($style);
-			}
+			$this->add_style($file, $attributes);
 		}
 	}
-
-	protected function add_style($path, $media = 'screen')
+	
+	public function add_style($file, array $attributes = NULL)
 	{
-		$this->template->styles[$path] = $media;
+		$this->styles[$file] = $attributes;
 	}
 	
 	protected function scripts($scripts)
 	{
-		foreach ($scripts as $script)
+		foreach ($scripts as $file => $attributes)
 		{
-			$this->add_script($script);
+			$this->add_script($file, $attributes);
 		}
 	}
 	
-	protected function add_script($path)
+	public function add_script($file, array $attributes = NULL)
 	{
-		$this->template->scripts[] = $path;
+		$this->scripts[$file] = $attributes;
 	}
 	
 	protected function add_content($content, $section = 'content')
